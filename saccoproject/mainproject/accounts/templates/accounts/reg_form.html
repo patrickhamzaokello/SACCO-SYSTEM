@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block login %}
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">TankHill Sacco</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Log In</a>
+                </li>
+
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/accounts/register">Register
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+{% endblock %}
+
+
+{% block cont %}
+<style>
+
+        label {
+        color: black;
+        font-family: 'Nanum Gothic', sans-serif;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: left;
+  width: 400px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+span{
+  height: 20px;
+  flex: 0 0 200px;
+  margin-left: 20px;
+}
+
+
+
+</style>
+
+{% endblock %}
+
+
+
+{% block body %}
+<h2 align="center">Register Here</h2>
+
+<div class="container" style="border-radius: 10px; background-color: #E7EAED; padding: 20px;">
+<form style="border-radius: 10px;background-color: #F7F7F7; form: 5cm; padding: 20px; margin: 20px;"  method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+    <label>
+        {{ field.label_tag }}<br>
+        <span>{{ field }}
+
+        {% for error in field.errors %}<br>
+    <p style="color: red">{{ error }}</p>
+    {% endfor %}
+        </span>
+    </label>
+    {% endfor %}
+    <button  class="btn btn-success" type="submit" style="width: 5cm;">Sign up</button>
+</form>
+
+</div>
+{% endblock %}

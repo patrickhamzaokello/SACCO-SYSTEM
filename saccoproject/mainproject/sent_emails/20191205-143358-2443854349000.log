@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8080
+From: webmaster@localhost
+To: pkasemer@gmail.com
+Date: Thu, 05 Dec 2019 11:33:58 -0000
+Message-ID: <157554563810.235264.7223462322506894143@Pkase>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8080.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8080/accounts/reset/MTA/5c0-8a0b22b8cf821a738304/
+
+Your username, in case you've forgotten: patrickpkase
+
+Thanks for using our site!
+
+The 127.0.0.1:8080 team
+
+
+
+-------------------------------------------------------------------------------

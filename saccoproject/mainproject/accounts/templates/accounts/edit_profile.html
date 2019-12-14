@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+
+{% block body%}
+<h3 align="center">Edit Profile</h3>
+<div class="container" style="border-radius: 10px; background-color: #E7EAED; padding: 20px;">
+    <form style="background-color: #F7F7F7; form: 5cm; padding: 20px; margin: 20px;" method="post">
+        {% csrf_token %}
+
+
+
+        {% for field in form %}
+        <p>
+            <span style="color: #202C5E;font-size: 20px;">{{ field.label_tag }}</span><br>
+
+            <span style="color: yellow;">{{ field }}</span>
+            {% if field.help_text %}
+            <small style="display: none;">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+        {% endfor %}
+        </p>
+        {% endfor %}
+
+        <button class="btn btn-success" type="submit" style="width: 5cm;">Submit</button>
+    </form>
+
+</div>
+{% endblock %}

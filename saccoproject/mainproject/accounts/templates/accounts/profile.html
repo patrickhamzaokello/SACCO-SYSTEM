@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Profile</title>
+
+{% endblock %}
+
+{% block cont %}
+<style>
+
+        label {
+        color: black;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: left;
+  width: 400px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+span {
+  height: 20px;
+  flex: 0 0 200px;
+  margin-left: 20px;
+  color: green;
+}
+
+h3{
+color: red;
+}
+
+
+
+</style>
+
+{% endblock %}
+<br>
+
+
+{% block body%}
+<br>
+<div align="center" class="container">
+
+    <h3>User Profile</h3><br>
+    <label>Username: <span>{{user}}</span> </label>
+
+    <label>Email: <span>{{user.email}}</span> </label>
+
+    <label>Firstname: <span>{{user.first_name}}</span> </label>
+
+    <label>Lastname: <span>{{user.last_name}}</span></label>
+
+    <label>Location: <span> {{user.profile.location}}</span></label>
+    <label>Amount: <span>{{user.profile.Amount}}</span></label>
+    <label>Phone : <span>{{user.profile.phone}}</span></label>
+    <label>Hostel: <span>{{user.profile.hostel}}</span></label>
+
+</div>
+{% endblock %}
